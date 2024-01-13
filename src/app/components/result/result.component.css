@@ -1,0 +1,22 @@
+@media print {
+    .flex-when-printing {
+      flex-direction: row !important;
+    }
+    .hide-when-printing {
+      display: none !important;
+    }
+    .left-when-printing {
+      margin: 0 auto !important;
+    }
+    .margin-left-when-printing {
+      margin-left: 3% !important;
+    }
+    .black-when-printing {
+      border: 2px solid black !important;
+      width: 700px;
+    }
+    .position-when-printing {
+      bottom: 0 !important;
+      right: -20px !important;
+    }
+  }

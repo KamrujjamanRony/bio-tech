@@ -1,0 +1,52 @@
+@if (!isAuthorized) {
+<div class="hero min-h-screen bg-gradient-to-r from-sky-200 to-indigo-200">
+  <div class="hero-content">
+    <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mx-auto">
+      <h1 class="text-xl md:text-2xl lg:text-3xl text-center font-bold pt-5 brand">
+        Admin Panel
+      </h1>
+      <form (submit)="onSubmitAuth($event)" class="card-body">
+        <label for="password">Enter Security Key:</label>
+        <input
+          type="password"
+          id="password"
+          class="input input-bordered"
+          required
+          [(ngModel)]="pass"
+          name="pass"
+        />
+        <label class="label">
+          <span class="label-text-alt text-red-500">{{ err }}</span>
+        </label>
+        <div>
+          <input
+            type="submit"
+            id="authorizeBtn"
+            value="Authorize"
+            class="mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+            style="
+              background: linear-gradient(
+                to right,
+                #2fe6f7 0%,
+                #a7e1e5 23%,
+                #23a8f5 46%,
+                #54a8d8 76%,
+                #0b75b8 100%
+              );
+            "
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+} @else {
+<div
+  class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white"
+>
+  <app-side-bar />
+  <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+}
