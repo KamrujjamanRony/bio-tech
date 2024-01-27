@@ -166,7 +166,7 @@ export class ResultComponent implements OnInit, OnDestroy {
     // The chart start position
     this.chartOptions = {
       animationEnabled: true,
-      height: 300,
+      height: 400,
       title: {
         text: 'Haemoglobin Electrophoresis',
         fontFamily: "tahoma",
@@ -205,8 +205,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 20,
               y: this.mainUI?.hbBarts,
-              indexLabel: `("Hb Barts", ${this.mainUI?.hbBarts})`,
+              indexLabel: "Hb Barts",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
             },
             { x: 30, y: 0 },
             { x: 30000, y: 0 },
@@ -224,8 +225,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 50,
               y: this.mainUI?.hbF,
-              indexLabel: `("Hb F", ${this.mainUI?.hbF})`,
+              indexLabel: "Hb F",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
               // indexLabelMaxWidth: 35,
             },
             { x: 60, y: 0 },
@@ -244,8 +246,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 90,
               y: this.mainUI?.hbJ,
-              indexLabel: `("Hb J", ${this.mainUI?.hbJ})`,
+              indexLabel: "Hb J",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
               // indexLabelMaxWidth: 35,
             },
             { x: 100, y: 0 },
@@ -264,8 +267,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 130,
               y: this.mainUI?.hbA,
-              indexLabel: `("Hb A", ${this.mainUI?.hbA})`,
+              indexLabel: "Hb A",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
               // indexLabelMaxWidth: 35,
             },
             { x: 140, y: 0 },
@@ -284,8 +288,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 160,
               y: this.mainUI?.hbL,
-              indexLabel: `("Hb L", ${this.mainUI?.hbL})`,
+              indexLabel: "Hb L",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
               // indexLabelMaxWidth: 35,
             },
             { x: 170, y: 0 },
@@ -304,8 +309,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 200,
               y: this.mainUI?.hbE,
-              indexLabel: `("Hb E", ${this.mainUI?.hbE})`,
+              indexLabel: "Hb E",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
               // indexLabelMaxWidth: 35,
             },
             { x: 210, y: 0 },
@@ -324,8 +330,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 230,
               y: this.mainUI?.hbA2,
-              indexLabel: `("Hb A2", ${this.mainUI?.hbA2})`,
+              indexLabel: "Hb A2",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
               // indexLabelMaxWidth: 35,
             },
             { x: 240, y: 0 },
@@ -344,8 +351,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 260,
               y: this.mainUI?.hbD,
-              indexLabel: `("Hb D", ${this.mainUI?.hbD})`,
+              indexLabel: "Hb D",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
               // indexLabelMaxWidth: 35,
             },
             { x: 270, y: 0 },
@@ -364,8 +372,9 @@ export class ResultComponent implements OnInit, OnDestroy {
             {
               x: 290,
               y: this.mainUI?.hbS,
-              indexLabel: `("Hb S", ${this.mainUI?.hbS})`,
+              indexLabel: "Hb S",
               indexLabelFontWeight: 'bolder',
+              indexLabelFontSize: 14,
               // indexLabelMaxWidth: 35,
             },
             { x: 300, y: 0 },
