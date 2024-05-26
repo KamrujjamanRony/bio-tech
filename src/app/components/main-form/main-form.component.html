@@ -294,6 +294,7 @@
       </div>
     </div>
     <!-- Navbar End -->
+    @if (originalMainUI.length == 0) {<p class="text-rose-600 text-lg text-center">Please Wait for Loading...</p>}
     @if (loading) {
     <span class="loading loading-infinity loading-lg"></span>
     }
