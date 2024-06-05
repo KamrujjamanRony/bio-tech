@@ -20,9 +20,7 @@ export class MainUIService {
   }
 
   getCompanyMainUIs(companyID: any): Observable<MainUIModel[]> {
-    return this.getAllMainUIs().pipe(
-      map(mainUI => mainUI.filter(data => data.companyID == companyID))
-    );
+    return this.http.get<MainUIModel[]>(`${environment.MainUIApi}/GetCompanyId?filterOn=CompanyID&filterQuery=${companyID}`);
   }
 
   getMainUI(id: string): Observable<MainUIModel>{
