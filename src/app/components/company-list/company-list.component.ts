@@ -41,7 +41,7 @@ export class CompanyListComponent implements OnInit, OnDestroy {
       this.companies$ = authService.getCompanyByNameCode();
       this.companies$.subscribe((companies) => {
         if (companies) {
-          this.companies = companies;
+          this.companies = companies?.filter(company => company?.companyID.startsWith(environment.cCode));
         }
       });
     }
@@ -142,6 +142,11 @@ export class CompanyListComponent implements OnInit, OnDestroy {
     };
   }
 
+  // Method to check if the companyID starts with a number
+  isCompanyIDStartingWithNumber(companyID: string): boolean {
+    return /^[0-9]/.test(companyID);
+  }
+
    //============================= Destroy All Subscription =============================
    ngOnDestroy(): void {
     this.addCompanySubscription?.unsubscribe();
@@ -150,3 +155,7 @@ export class CompanyListComponent implements OnInit, OnDestroy {
   }
 
 }
+function company(value: any, index: number, array: any[]): value is any {
+  throw new Error('Function not implemented.');
+}
+

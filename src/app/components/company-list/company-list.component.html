@@ -137,6 +137,7 @@
                   <tr
                     class="border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700"
                   >
+                  <!-- [hidden]="data?.companyID.startsWith('a') || data?.companyID.startsWith('h') || isCompanyIDStartingWithNumber(data?.companyID)" -->
                     <td class="whitespace-nowrap px-6 py-1">
                       {{ data?.companyID.slice(1, data?.companyID.length+1) }}
                     </td>
