@@ -11,8 +11,8 @@ import {
   Modal,
   Collapse,
 } from 'tw-elements';
-import { MainUIService } from '../../features/services/main-ui.service';
 import { environment } from '../../../environments/environments';
+import { MainUIService } from '../../features/services/main-ui.service';
 import { AuthService } from '../../features/services/auth.service';
 
 @Component({
@@ -25,9 +25,8 @@ import { AuthService } from '../../features/services/auth.service';
 export class TestCountComponent implements OnInit, OnDestroy {
   modelTestCount: any;
   companies$?: Observable<any[]>;
+  rest: any[] = [];
   companies: any[] = [];
-  testCount: any = [];
-  cCode: any = environment.cCode;
   testCountSubscription?: Subscription;
 
   constructor(private mainUIService: MainUIService, private authService: AuthService) {
@@ -67,14 +66,21 @@ export class TestCountComponent implements OnInit, OnDestroy {
       this.testCountSubscription = this.mainUIService
         .companyWiseTest(countData)
         .subscribe({
-          next: (data: any) => {
-            this.testCount = data.filter((c: { companyID: string; }) => c.companyID.startsWith(environment.cCode));
+          next: (data) => {
+            this.rest = [];
             this.companies$ = this.authService.getAllCompany();
-            this.companies$.subscribe((com) => {
-              if (com) {
-                com.map(c => this.testCount.map((d:any) => d.companyID == c.companyID) && this.companies.push({id: c.companyID, name: c.name, count: this.testCount.find((d: any)=> d.companyID == c.companyID)?.total}));
-              }
-              console.log(this.companies);
+            this.companies$.subscribe((companies) => {
+              companies.forEach((c) => {
+                const matchingData = data.find((d: any) => d.companyID == c.companyID);
+                if (matchingData) {
+                  this.rest.push({
+                    id: c.companyID,
+                    name: c.name,
+                    count: matchingData.total
+                  });
+                }
+              });
+              this.companies = this.rest.filter((c) => c.id.startsWith(environment.cCode));
             });
           },
         });

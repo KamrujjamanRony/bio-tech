@@ -133,7 +133,6 @@
                   @for(data of companies; track data.id){
                   <tr
                     class="border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700 text-center"
-                    [hidden]="!data?.id.startsWith(cCode)"
                   >
                     <td class="whitespace-nowrap px-6 py-1">
                       {{ data?.id.slice(1, data?.id.length+1) }}
